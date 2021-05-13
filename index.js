@@ -16,6 +16,19 @@ app.get('/pdf', async(req, res) => {
   // const content = readFileSync(
   //   path.resolve('assets', './invoice.html'), 'utf-8'
   // )
+  const carrito  = [ { title: "test", precio: 80, cantidad: 2 }, { title: "test2", precio: 80, cantidad: 2 }, { title: "test3", precio: 80, cantidad: 2 }]
+  const llueve = carrito.map(item => {
+    return( 
+      `
+        <tr>
+        <td>${item.cantidad}</td>
+        <td>${item.title}</td>
+        <td>${ item.precio === 0 ? `<p>*Por cotizar</p>` : item.precio }</td>
+        </tr>  
+
+      `)
+  })
+
 
   const web = `
   <!doctype html>
@@ -226,7 +239,7 @@ app.get('/pdf', async(req, res) => {
                     <div class="col-3 col-3">
                       <div class="invoice-bottom-left">
                         <h5>ITAMX No.</h5>
-                        <h4 id="codigoOc">${"Gamberro"}</h4>
+                        <h4 id="codigoOc">${"Codigo OC"}</h4>
                       </div>
                     </div>
                     <div class="col-offset-1 col-12 col-9 w-100">
@@ -241,6 +254,8 @@ app.get('/pdf', async(req, res) => {
                           </thead>
                           <tbody>
                                 <!--  cosas del cliente -->
+                                ${llueve}
+
                             <tr></tr>
                           </tbody>
                           <thead>
