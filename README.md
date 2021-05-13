@@ -1,6 +1,6 @@
-## Background / Overview
+## Puppeteer to HTML
 
-Este repositorio ayudara a usar Puppeteer para generar un pdf apartir de un hmtl,
+Usando Puppeteer para generar un pdf apartir de un hmtl,
 Se reciben los datos del Fronted y se usa la plantilla para generar un Invoice
 
 ## Features
