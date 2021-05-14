@@ -1,4 +1,4 @@
-## HTML to PDF whit Puppeteer 
+## HTML to PDF with Puppeteer 
 
 Usando Puppeteer para generar un pdf apartir de un HTML,
 Se reciben los datos del Fronted y se usa la plantilla para generar un Invoice
